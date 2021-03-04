@@ -2,8 +2,9 @@ package ro.ase.csie.cts.g1088.laborator.modele;
 
 import ro.ase.csie.cts.g1088.laborator.exceptii.ExceptieFonduriInsuficiente;
 import ro.ase.csie.cts.g1088.laborator.exceptii.ExceptieTransferIlegal;
+import ro.ase.csie.cts.g1088.laborator.interfete.Profitabil;
 
-public class ContDepozit extends ContBanca{
+public class ContDepozit extends ContBanca implements Profitabil{
 	
 	public static final double BALANTA_MINIMA=100;
 	
@@ -35,7 +36,7 @@ public class ContDepozit extends ContBanca{
 	}
 	
 	@Override
-	public void adaugaDobanda(double procentDobanda) {
+	public void adaugaDobanda(double procentDobanda){
 		this.balanta*=(1+procentDobanda/100);
 	}
 }

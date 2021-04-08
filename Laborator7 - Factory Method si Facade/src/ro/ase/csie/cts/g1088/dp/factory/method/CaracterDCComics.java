@@ -8,8 +8,6 @@ public class CaracterDCComics extends CaracterJoc {
 	}
 	@Override
 	public void setDeplaseaza() {
-		// TODO Auto-generated method stub
-		
 	}
 
 }

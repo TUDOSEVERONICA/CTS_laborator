@@ -9,11 +9,17 @@ public class DecoratosEsteRanit extends DecoratorErouAbstract {
 
 	@Override
 	public void alearga() {
-		if(this.erou.puncteViata<NIVEL_CRITIC) {
-			System.out.println("Eroul nu mai poate alerga. Este ranit critic");
+		if(this.erou.getPuncteViata() < NIVEL_CRITIC) {
+			System.out.println("Eroul nu mai poate alerga. Este ranit critic.");
 		}
-		else
+		else {
 			this.erou.alearga();
+		}
+	}
+
+	@Override
+	public int getPuncteViata() {
+		return this.erou.getPuncteViata();
 	}
 	
 }

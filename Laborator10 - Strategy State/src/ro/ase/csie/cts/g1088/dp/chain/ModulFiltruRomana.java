@@ -13,7 +13,7 @@ public class ModulFiltruRomana extends ModulProcesareMesaj{
 			}
 		}
 		
-		if(esteValid)
+		if(esteValid && this.next!=null)
 			this.next.procesareMesaj(mesaj);
 		
 	}

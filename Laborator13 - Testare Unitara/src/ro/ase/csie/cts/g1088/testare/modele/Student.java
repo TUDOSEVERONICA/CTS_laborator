@@ -33,8 +33,8 @@ public class Student {
 	}
 
 
-	public void setNume(String nume) throws ExceptieNume {
-		if(nume.length()<MIN_LUNGIME_NUME) {
+	public void setNume(String nume) throws ExceptieNume{
+		if(nume.length() < MIN_LUNGIME_NUME) {
 			throw new ExceptieNume();
 		}
 		this.nume = nume;
@@ -47,15 +47,15 @@ public class Student {
 
 
 	public void setVarsta(int varsta) throws ExceptieVarsta{
-		if(varsta<MIN_VARSTA) {
+		if(varsta < MIN_VARSTA || varsta > MAX_VARSTA) {
 			throw new ExceptieVarsta();
 		}
 		this.varsta = varsta;
 	}
 
 
-	public void setNote(ArrayList<Integer> note) throws ExceptieNota {
-		this.note = note;
+	public void setNote(ArrayList<Integer> note) throws ExceptieNota{
+		this.note = (ArrayList<Integer>) note.clone();
 	}
 	
 	
@@ -77,8 +77,8 @@ public class Student {
 		
 	}
 
-	public int getNotaMinima() {
-    	if(this.note==null||this.note.size()==0) {
+    public int getNotaMinima() {
+    	if(this.note == null || this.note.size()==0) {
     		return 0;
     	}
         int min = this.note.get(0);
@@ -89,6 +89,5 @@ public class Student {
 		}
         return min;
     }
-	
 	
 }
